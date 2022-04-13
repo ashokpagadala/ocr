@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Index | OCR Application</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
+    </head>
+    <body bgcolor="White">
+        <center><h2>OCR | Image File Conversion | BFIL</h2><center>
+        <br>
+        <br>
+        <div class='col-xs-12'>  
+            <div class='container-fluid'>
+               <div class="row">
+                 <div class='col-xs-12'>   
+                    <center>                 
+                      <form class="form" action="/submitImage/" method="POST" enctype="multipart/form-data">
+                        <div class='row'>                            
+                                <label for='ocrImage'>Choose Image File: </label>
+                                <input class="btn btn-success" type="file" name="ocrImage" id="ocrImage" src="" alt="" onchange='showImage(event)'>
+                                <br>
+                                <img id='uploadedImage' src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/upload-512.png"   width="200px" height="200px"" alt=""/>
+                                                             
+                            </div>     
+                            <br>
+
+                        <div class='row'>
+                            <div class='col-xs-12'>                           
+                                
+                                <input class="btn btn-success" type="submit" value="Convert to Text Now" src="" />                                
+                            </div>
+                        </div>                    
+                      </form>  
+                    </center>          
+                </div>
+            </div>
+        </div>   
+    
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf-8">
+        function showImage(event)
+        {
+        uploadedImage = document.getElementById('ocrImage').files[0];
+        console.log(uploadedImage);
+        document.getElementById('uploadedImage').src = URL.createObjectURL(event.target.files[0]);
+        }  
+    </script>
+</html>

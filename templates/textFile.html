@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Result | OCR Application</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <center><h2>OCR Image File Conversion | Result</h2></center>
+        <br>
+        <br><center>
+        <div class='container-fluid'>
+            <div class="row">
+                <div class='col-xs-12'>
+                        
+                    
+                    <textarea id='textValue' readonly name="result" rows="20" cols='150' value=''>{{ text }}</textarea>
+                </div>
+            </div>
+        </div>
+        <br>
+                
+                    <form method="get" accept-charset="utf-8">
+                        <button type="button" class="btn btn-success" onclick="windowClose();">Done</button>
+                    </form></center>
+
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" charset="utf-8">
+function downloadText(){
+    var text = document.getElementById('textValue').value;
+    var val = "data:x-application/text," + escape(text);
+    window.open(val);
+}
+function generatePDF() {
+    var doc = new jsPDF();  //create jsPDF object
+     doc.fromHTML(document.getElementById(textValue).value, // page element which you want to print as PDF
+     var val = "data:x-application/text," + escape(text);
+     function(a) 
+      {
+       doc.save("HTML2PDF.pdf"); // save file name as HTML2PDF.pdf
+     });
+     
+    window.open(val);
+   }
+
+   function windowClose() {
+    window.open('','_parent','');
+    window.close();
+    }
+    </script>
+</html>
